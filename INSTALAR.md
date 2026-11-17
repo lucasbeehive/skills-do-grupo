@@ -58,7 +58,7 @@ O modelo forte da conversa planeja; cada agente roda no modelo mais barato que e
 
 Espaço em disco: menos de 1 MB. Não baixa programa nenhum além do uv (e do Python, que o uv traz se faltar).
 
-Esta skill precisa ser **ligada** depois de copiada. Ligar mexe em dois arquivos da pasta `.claude` do usuário, sempre com cópia de segurança antes (`<arquivo>.antes-modelo-certo-<data>`):
+**Atenção: só copiar a pasta não basta. Esta skill precisa ser ligada depois de copiada (comando abaixo, no passo 4).** Se a pasta da skill mudar de lugar depois, ligue de novo. Ligar mexe em dois arquivos da pasta `.claude` do usuário, sempre com cópia de segurança antes (`<arquivo>.antes-modelo-certo-<data>`):
 
 | Arquivo | O que muda |
 | --- | --- |
