@@ -51,3 +51,25 @@ Conferir:
 - `uv run "<pasta da skill>/scripts/teste_rapido.py"`
 
 Frase de teste: "Assiste esse vídeo e me resume: <link do YouTube>".
+
+### modelo-certo
+
+O modelo forte da conversa planeja; cada agente roda no modelo mais barato que entrega a mesma qualidade. Manual: `manuais/Como usar a skill modelo-certo.pdf`.
+
+Espaço em disco: menos de 1 MB. Não baixa programa nenhum além do uv (e do Python, que o uv traz se faltar).
+
+Esta skill precisa ser **ligada** depois de copiada. Ligar mexe em dois arquivos da pasta `.claude` do usuário, sempre com cópia de segurança antes (`<arquivo>.antes-modelo-certo-<data>`):
+
+| Arquivo | O que muda |
+| --- | --- |
+| `settings.json` | acrescenta um vigia que roda antes de cada agente e o padrão `sonnet` para agentes (`CLAUDE_CODE_SUBAGENT_MODEL`) |
+| `CLAUDE.md` | acrescenta uma linha que carrega a regra em toda conversa |
+
+Ligar e conferir (no passo 4):
+
+- `uv run --script "<pasta da skill>/scripts/instalar.py"`
+- `uv run --script "<pasta da skill>/scripts/instalar.py" --checar` (tem de terminar com "Tudo certo.")
+
+Desligar quando quiser: `uv run --script "<pasta da skill>/scripts/instalar.py" --remover`.
+
+Frase de teste: "Cria um agente sem escolher modelo, só para eu ver o vigia bloquear." O esperado é o bloqueio com a escada de modelos, e o Claude refazendo a chamada com um modelo escolhido.
